@@ -1,33 +1,39 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { qstate_logo } from "../assets";
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { logout } from "../authSlice";
 
-const NavBar = ({ fadeInPage }) => {
+const NavBar = () => {
   const navigate = useNavigate();
   const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
-  const [scrollingUp, setScrollingUp] = useState(true);
+  const [scrollingUp, setScrollingUp] = useState(true); // Initially true to show navbar on load
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [lastScrollY, setLastScrollY] = useState(0); // To track scroll position
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY) {
+        // Scrolling down
         setScrollingUp(false);
       } else {
+        // Scrolling up
         setScrollingUp(true);
       }
       setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [lastScrollY]);
 
   const toggleNavigation = () => {
@@ -45,34 +51,29 @@ const NavBar = ({ fadeInPage }) => {
   return (
     <div
       className={`fixed ${
-        scrollingUp ? "top-6" : "-top-[200px]"
+        scrollingUp ? "-top-10" : "-top-[200px]" // Navbar comes back when scrolling up, moves up when scrolling down
       } left-[32px] w-[1200px] p-2 h-20 justify-center z-50 text-center pl-4 pr-4 transition-all duration-300 ease-in-out`}
     >
       <div className="flex items-center px-5 lg:px-10 py-5 -translate-y-6">
-        <div
-          className={`block w-[5rem] xl:mr-8  transition duration-1000 ${
-            fadeInPage ? "fixed top-8 left-12 " : ""
-          }`}
+        <a
+          className="block w-[12rem] xl:mr-8 cursor-pointer"
+          onClick={() => navigate("/")}
         >
-          <img
-            src={"/src/assets/qstate_logo.png"}
-            width={190}
-            height={40}
-            alt="Q State"
-            className="w-full scale-150"
-          />
-        </div>
+          <img src={qstate_logo} width={190} height={40} alt="Q State" />
+        </a>
 
         <nav
           className={`${
             openNavigation ? "flex" : "hidden lg:flex"
           } fixed top-[5rem] left-0 right-0 bottom-0 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
         >
-          <div className="flex flex-col items-center justify-center lg:flex-row cursor-pointer backdrop-blur-lg pl-4 pr-4 bg-n-3 bg-opacity-20 border border-n-3 rounded-3xl ">
+          <div className="flex flex-col items-center justify-center lg:flex-row cursor-pointer backdrop-blur-lg pl-4 pr-4 bg-n-3 bg-opacity-20 border border-n-3 rounded-3xl -translate-x-6">
             {navigation.map((item) => (
               <a
                 key={item.id}
-                onClick={() => navigate(item.url)}
+                onClick={() => {
+                  navigate(item.url);
+                }}
                 className={`block font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.url === pathname.pathname
                     ? "lg:text-n-1"
@@ -83,20 +84,21 @@ const NavBar = ({ fadeInPage }) => {
               </a>
             ))}
           </div>
+
           <HamburgerMenu />
         </nav>
-        <div className="backdrop-blur-xl border border-n-2 flex text-center bg-n-1 translate-y-1 bg-opacity-5 -translate-x-15 rounded-3xl">
+        <div className="backdrop-blur-xl border border-n-2 flex text-center bg-n-1 bg-opacity-5 translate-y-1 -translate-x-2 rounded-2xl">
           {!auth.isAuthenticated && (
             <a
               onClick={() => navigate("/sign_up")}
-              className="button hidden mr-8 text-white translate-y-3 translate-x-5 transition-colors hover:text-n-3 hover:cursor-pointer lg:block"
+              className="hidden mr-8 text-white translate-y-3 translate-x-5 font-code font-medium transition-colors rounded-xl hover:text-n-3 hover:cursor-pointer lg:block"
             >
-              Register
+              REGISTER
             </a>
           )}
           {!auth.isAuthenticated && (
             <Button
-              className="hidden lg:flex bg-gradient-to-r  from-n-3 to-n-4 rounded-3xl"
+              className="hidden lg:flex bg-gradient-to-r from-n-3 to-n-4 rounded-2xl border border-l-2 border-l-n-2"
               onClick={() => navigate("/sign_in")}
             >
               Log in
@@ -113,6 +115,7 @@ const NavBar = ({ fadeInPage }) => {
               Logout
             </a>
           )}
+
           <Button
             className="ml-auto lg:hidden"
             px="px-3"
