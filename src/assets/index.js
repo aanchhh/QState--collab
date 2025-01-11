@@ -6,6 +6,21 @@ import play from "./play.svg";
 import gradient from "./gradient.png";
 import smallSphere from "./4-small.png";
 import grid from "./grid.png";
+import icons_bento from "./icons_bento.png";
+import icons_2 from "./icons_2.png";
+import lightning_bolt from "./lightning_bolt.svg";
+import pair_up from "./pair_up.svg";
+import bar_up from "./bar_up.svg";
+import brain from "./brain.svg";
+import ai from "./ai.svg";
+import collabWork from "./collabWork.svg";
+import BentoAnimation from "./BentoAnimation.gif";
+import BentoAnimation2 from "./BentoAnimation2.gif";
+import signupIll from "./signupIll.png";
+import emailIll from "./emailIll.png";
+import networkIll from "./networkIll.png";
+import agentIll from "./agentIll.png";
+import uploadIll from "./uploadIll.png";
 import check2 from "./check-02.svg";
 import loading1 from "./loading-01.svg";
 import yourlogo from "./yourlogo.svg";
@@ -13,7 +28,9 @@ import homeSmile from "./home-smile.svg";
 import file02 from "./file-02.svg";
 import searchMd from "./search-md.svg";
 import plusSquare from "./plus-square.svg";
-import qstate_logo from "./qstate.svg";
+import qstate_logo from "./qstate_logo.png";
+import qstate from "./qstate.svg";
+// import qstate_logo from "./qstate.svg";
 import recording03 from "./recording-03.svg";
 import recording01 from "./recording-01.svg";
 import disc02 from "./disc-02.svg";
@@ -87,6 +104,21 @@ export {
   gradient,
   smallSphere,
   grid,
+  icons_bento,
+  icons_2,
+  lightning_bolt,
+  pair_up,
+  bar_up,
+  brain,
+  ai,
+  collabWork,
+  signupIll,
+  emailIll,
+  networkIll,
+  agentIll,
+  uploadIll,
+  BentoAnimation,
+  BentoAnimation2,
   yourlogo,
   homeSmile,
   file02,
@@ -111,6 +143,7 @@ export {
   photoshop,
   protopie,
   qstate_logo,
+  qstate,
   raindrop,
   slack,
   service1,
