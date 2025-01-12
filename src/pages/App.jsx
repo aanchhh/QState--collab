@@ -43,7 +43,11 @@ const App = () => {
     <>
       {showGif && <LoadingLogo isGif />}
       {showStaticLogo && <LoadingLogo isGif={false} />}
-      <div className={`${fadeInPage ? "animate-fadeInPage" : "hidden"}`}>
+      <div
+        className={`${
+          fadeInPage ? "animate-fadeInPage" : "hidden"
+        } min-w-[350px]`}
+      >
         <Header fadeInPage={fadeInPage} />
         <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
           <Hero />

@@ -22,7 +22,7 @@ const NavBarMobile = () => {
   return (
     <div className="fixed top-0 left-0 w-full p-4 bg-opacity-90 z-50 text-center ">
       <div className="flex items-center justify-between px-5">
-        <a onClick={() => navigate("/")}>
+        <a onClick={() => navigate("/")} className="min-w-[150px]">
           <img src={qstate_logo} alt="Q State" width={150} height={30} />
         </a>
         <button

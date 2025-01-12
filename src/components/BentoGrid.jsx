@@ -4,7 +4,7 @@ export const BentoGrid = ({ className, children }) => {
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto",
+        "grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(18rem,_1fr)] max-w-7xl mx-auto",
         className
       )}
     >
@@ -21,21 +21,11 @@ export const BentoGridItem = ({ className, title, description, imageUrl }) => {
         className
       )}
     >
-      {/* Image/Header Section */}
       <div
-        className="relative h-full w-auto bg-cover bg-center transition-all duration-300 group-hover:h-2/3"
-        style={{
-          backgroundImage: `url(${imageUrl})`,
-        }}
-      >
-        {/* Optional Image Overlay */}
-        {/* <div className="absolute inset-0 group-hover:bg-opacity-50 transition duration-300"></div> */}
-      </div>
-
-      {/* Text Content */}
-      <div
-        className="absolute bottom-0 left-0 w-full h-auto bg-white dark:bg-n-6/40 px-4 py-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-      >
+        className="relative h-full w-full bg-cover bg-center transition-all duration-300 group-hover:h-2/3"
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      />
+      <div className="absolute bottom-0 left-0 w-full h-auto bg-white dark:bg-n-6/40 px-4 py-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
         <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 text-lg">
           {title}
         </div>

@@ -27,7 +27,7 @@ const Hero = () => {
         >
           <div className="text-3xl md:text-7xl font-bold dark:text-white text-center ">
             <div>
-              <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-20 py-6  bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+              <h1 className="text-4xl xl:px-10 lg:text-6xl   md:text-5xl sm:text-5xl font-semibold  max-w-7xl  text-center mt-6 relative z-20 py-6  bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
                 <Cover>Streamline</Cover> your Business Processes Using
                 &nbsp;AI&nbsp; with {` `}{" "}
                 <span className="inline-block relative bg-gradient-to-r text-white bg-clip-text text-transparent">
@@ -37,7 +37,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="font-extralight  dark:text-neutral-200 py-4">
-            <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 text-center md:text-base lg:text-lg lg:mb-8">
+            <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 text-center md:text-base md:mx-10 lg:text-lg lg:mb-8">
               Unleash the Maximum Efficiency. Upgrade your productivity with
               Qstate&apos;s custom AI Agents.
             </p>
