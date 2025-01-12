@@ -25,7 +25,7 @@ const Hero = () => {
           }}
           className="relative flex flex-col gap-4 items-center justify-center px-4"
         >
-          <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
+          <div className="text-3xl md:text-7xl font-bold dark:text-white text-center ">
             <div>
               <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-20 py-6  bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
                 <Cover>Streamline</Cover> your Business Processes Using
@@ -36,8 +36,8 @@ const Hero = () => {
               </h1>
             </div>
           </div>
-          <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
-            <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
+          <div className="font-extralight  dark:text-neutral-200 py-4">
+            <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 text-center md:text-base lg:text-lg lg:mb-8">
               Unleash the Maximum Efficiency. Upgrade your productivity with
               Qstate&apos;s custom AI Agents.
             </p>
