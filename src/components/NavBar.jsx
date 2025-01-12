@@ -52,9 +52,12 @@ const NavBar = () => {
     <div
       className={`fixed ${
         scrollingUp ? "-top-10" : "-top-[200px]" // Navbar comes back when scrolling up, moves up when scrolling down
-      } left-[32px] w-[1200px] p-2 h-20 justify-center z-50 text-center pl-4 pr-4 transition-all duration-300 ease-in-out`}
+      } left-[32px] w-full p-2 h-20 justify-center z-50 text-center pl-4 pr-4 transition-all duration-300 ease-in-out`}
     >
-      <div className="flex items-center px-5 lg:px-10 py-5 -translate-y-6">
+      <div
+        className="flex items-center px-5 lg:px-10 py-5 
+      translate-y-10"
+      >
         <a
           className="block w-[12rem] xl:mr-8 cursor-pointer"
           onClick={() => navigate("/")}
@@ -87,11 +90,11 @@ const NavBar = () => {
 
           <HamburgerMenu />
         </nav>
-        <div className="backdrop-blur-xl border border-n-2 flex text-center bg-n-1 bg-opacity-5 translate-y-1 -translate-x-2 rounded-2xl">
+        <div className="backdrop-blur-xl border border-n-2 flex text-center bg-n-1 bg-opacity-5 translate-y-1 -translate-x-16 rounded-2xl">
           {!auth.isAuthenticated && (
             <a
               onClick={() => navigate("/sign_up")}
-              className="hidden mr-8 text-white translate-y-3 translate-x-5 font-code font-medium transition-colors rounded-xl hover:text-n-3 hover:cursor-pointer lg:block"
+              className="hidden mr-8 text-white translate-y-3 translate-x-4 font-code font-medium transition-colors rounded-xl hover:text-n-3 hover:cursor-pointer lg:block"
             >
               REGISTER
             </a>
