@@ -8,7 +8,7 @@ const Benefits = () => {
   return (
     <Section id="features">
       <ClipPath />
-      <h1 className=" px-20 pb-20 bg-gradient-to-r from-n-2 to-n-5 bg-clip-text text-transparent leading-normal text-4xl text-left sm:text-4xl md:text-5xl lg:text-6xl font-semibold">
+      <h1 className=" px-20 pb-32 bg-gradient-to-r from-n-2 to-n-5 bg-clip-text text-transparent leading-normal text-4xl text-left sm:text-4xl md:text-5xl lg:text-6xl font-semibold">
         Features & Benefits
       </h1>
       <GradientLight />
