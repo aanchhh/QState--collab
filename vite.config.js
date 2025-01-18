@@ -13,7 +13,7 @@ export default defineConfig({
     }),
   ],
   build: {
-    outDir: "../AI_Agents/Api/dist", // Specify your output directory
+    outDir: "../middleware/dist", // Specify your output directory
   },
   // Configure the server options
   server: {
