@@ -12,6 +12,11 @@ import "./index.css";
 import Signup from "./pages/Signup.jsx";
 import Signin from "./pages/Signin.jsx";
 import Execute from "./pages/Execute.jsx";
+// Dashboard
+import Dashboard from "./pages/Dashboard.jsx";
+import Overview from "./components/dashboard/Overview.jsx";
+import EmailAutomation from "./components/dashboard/EmailAutomation.jsx";
+import Html5Canvas from "./components/dashboard/Html5Canvas.jsx";
 
 const AllRoutes = () => {
   return (
@@ -29,6 +34,10 @@ const AllRoutes = () => {
       <Route path="/execute" element={<Execute />} />
       <Route path="/contact" element={<Contact />} />{" "}
       {/* Add route for ContactUs */}
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/overview" element={<Overview />} />
+      <Route path="/email-automation" element={<EmailAutomation />} />
+      <Route path="/html5-canvas" element={<Html5Canvas />} />
     </Routes>
   );
 };
